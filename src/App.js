@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useState } from 'react';
+import {Home} from './Home/Home';
+import {IntlProvider} from 'react-intl'
+import en_messages from './i18n/en.json';
+import es_messages from './i18n/es.json';
+
+const messages = {
+  'en': en_messages,
+  'es': es_messages,
+}
 
 function App() {
+  const [locale, setLocale] = useState(navigator.language.split(/[-_]/)[0]);
+
+  const changeLocale = (locale) => {
+    return () => {
+      setLocale(locale)
+    }
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <IntlProvider messages={messages[locale] || messages['en']} locale="locale" defaultLocale="en">
+      <button onClick={changeLocale('en')}>Change to english</button>
+      <button onClick={changeLocale('es')}>Change to spanish</button>
+      <Home />
+    </IntlProvider>
   );
 }
 
