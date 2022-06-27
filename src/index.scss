@@ -1,0 +1,23 @@
+$base-color: #2e2e32;
+$text-color: #FCF8E8;
+$primary-color: #94B49F;
+$secondary-color: #ECB390;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$body-bg: $base-color;
+$body-color: $text-color;
+
+$theme-colors: (
+    "primary": $primary-color,
+    "secondary": $secondary-color,
+);
+
+@import "~bootstrap/scss/bootstrap";
