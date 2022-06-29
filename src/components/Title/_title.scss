@@ -1,0 +1,11 @@
+@use '../../variables' as v;
+
+.name-container {
+  padding: 3rem;
+  border: 0.5rem solid v.$primary-color;
+  border-radius: 0.5rem;
+}
+
+.profile-img {
+  max-width: 400px;
+}

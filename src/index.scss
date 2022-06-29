@@ -1,7 +1,9 @@
-$base-color: #2e2e32;
-$text-color: #FCF8E8;
-$primary-color: #94B49F;
-$secondary-color: #ECB390;
+
+@use './variables' as v;
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -10,14 +12,62 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 20px !important;
 }
 
-$body-bg: $base-color;
-$body-color: $text-color;
+$body-bg: v.$base-color;
+$body-color: v.$text-color;
 
 $theme-colors: (
-    "primary": $primary-color,
-    "secondary": $secondary-color,
+    "primary": v.$primary-color,
+    "secondary": v.$secondary-color,
 );
 
+h1, .h1 {
+  font-size: calc(3rem + 1.5vw) !important;
+}
+@media (min-width: 1200px) {
+  h1, .h1 {
+    font-size: 5rem !important;
+  }
+}
+
+h2, .h2 {
+  font-size: calc(2.5rem + 1.5vw) !important;
+}
+@media (min-width: 1200px) {
+  h2, .h2 {
+    font-size: 4rem !important;
+  }
+}
+
+h3, .h3 {
+  font-size: calc(1.4rem + 1.5vw) !important;
+}
+@media (min-width: 1200px) {
+  h3, .h3 {
+    font-size: 2rem !important;
+  }
+}
+
 @import "~bootstrap/scss/bootstrap";
+
+.main-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+
+  h1, h2 {
+    color: v.$primary-color
+  }
+}
+
+.text-align-center {
+  text-align: center
+}
+
+.anchor {
+  display: block;
+  height: 92px;
+  margin-top: -92px;
+  visibility: hidden;
+}

@@ -13,9 +13,9 @@ export const NavBar = ({selectedLocale, onChangeLocale}) => {
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#about"><FormattedMessage id="about-me"/></Nav.Link>
             <Nav.Link href="#experience"><FormattedMessage id="experience"/></Nav.Link>
             <Nav.Link href="#education"><FormattedMessage id="education"/></Nav.Link>
+            <Nav.Link href="#languages"><FormattedMessage id="languages"/></Nav.Link>
             <Nav.Link href="#contact"><FormattedMessage id="contact"/></Nav.Link>
           </Nav>
           <Nav>

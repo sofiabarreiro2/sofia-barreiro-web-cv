@@ -1,0 +1,14 @@
+@use '../../variables' as v;
+
+.contact-section {
+  border: 0.5rem solid v.$secondary-color;
+  border-radius: 0.5rem;
+
+  h1 {
+    color: v.$secondary-color
+  }
+
+  h2 {
+    color: v.$secondary-color
+  }
+}
